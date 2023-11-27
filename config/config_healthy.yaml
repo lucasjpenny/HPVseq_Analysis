@@ -1,0 +1,24 @@
+work_dir: "/path/to/your/workdir"  # Update this with your actual working directory path
+mapq: 30
+mem: "8G"
+time: "0-8:00:00"
+mappability_correction: True
+out_dir: "/cluster/projects/scottgroup/people/lucas/head_neck_analysis/snakemake_frag/20231120_fragmentomics/"
+# genome_ref: "/cluster/projects/scottgroup/people/jinfeng/HPV-seq/bwa_HPVs/HPV16.fasta"
+genome_ref: "/cluster/tools/data/genomes/human/hg19/iGenomes/Sequence/WholeGenomeFasta/genome.fa"
+griff_dir: "/cluster/home/t116306uhn/Reference/Griffin"
+
+paths:
+  dependencies:
+    conda_env: frag-pipeline
+data:
+  base_path: "/cluster/projects/scottgroup/people/lucas/head_neck_analysis/snakemake_frag/20231120_fragmentomics/"
+  bed_dir: NA #directory to bed files of interest. Snakemake will run these seperately
+  cohorts:
+    OPC_test:
+      samplesheet: "/cluster/home/t116306uhn/workflows/fragmentomics/config/samples_final.csv"
+      active: T
+      settings:
+        single_ended: [""] #add sample names in list format that are single-ended
+
+
